@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 import kotlinx.android.synthetic.main.activity_detail_movie.movie_overview
-import kotlinx.android.synthetic.main.movie_item.*
-import kotlinx.android.synthetic.main.movie_item.view.*
+
 
 class DetailMovieActivity : AppCompatActivity() {
     companion object {
@@ -19,7 +18,7 @@ class DetailMovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_movie)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         movies = intent.getParcelableExtra(EXTRA_DATA)
 
@@ -30,8 +29,5 @@ class DetailMovieActivity : AppCompatActivity() {
         Glide.with(img_poster).load(IMAGE_BASE + movies!!.poster).into(img_poster)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+
     }
-}
